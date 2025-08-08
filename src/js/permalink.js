@@ -102,9 +102,9 @@ export function permalinkEventSet (response) {
     value: {
       id: "kyuusekki",
       title: '全国旧石器時代遺跡',
-      layer: Layers.Layers[4].children[0].children[0].data.layer,
+      layer: Layers.Layers[4].children[0].children[2].data.layer,
       opacity: 1,
-      summary: Layers.Layers[4].children[0].children[0].data.summary,
+      summary: Layers.Layers[4].children[0].children[2].data.summary,
       component: ''
     },
     mapName: 'map01'
