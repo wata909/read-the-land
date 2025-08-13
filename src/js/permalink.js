@@ -24,7 +24,7 @@ export function permalinkEventSet (response) {
   store.commit('base/unshiftLayerList', {
     value: {
       id: "jinko1km",
-      title: '疎空間指標',
+      title: '人口密度（人/km2）',
       layer: Layers.Layers[0].data.layer,
       opacity: 1,
       summary: Layers.Layers[0].data.summary,
@@ -46,7 +46,7 @@ export function permalinkEventSet (response) {
   store.commit('base/unshiftLayerList', {
     value: {
       id: "jinko1km",
-      title: '疎空間指標',
+      title: '人口密度（人/km2）',
       layer: Layers.Layers[0].data.layer,
       opacity: 1,
       summary: Layers.Layers[0].data.summary,
@@ -68,7 +68,7 @@ export function permalinkEventSet (response) {
   store.commit('base/unshiftLayerList', {
     value: {
       id: "jinko1km",
-      title: '疎空間指標',
+      title: '人口密度（人/km2）',
       layer: Layers.Layers[0].data.layer,
       opacity: 1,
       summary: Layers.Layers[0].data.summary,
@@ -90,7 +90,7 @@ export function permalinkEventSet (response) {
   store.commit('base/unshiftLayerList', {
     value: {
       id: "jinko1km",
-      title: '疎空間指標',
+      title: '人口密度（人/km2）',
       layer: Layers.Layers[0].data.layer,
       opacity: 1,
       summary: Layers.Layers[0].data.summary,

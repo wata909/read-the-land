@@ -1,7 +1,7 @@
 <template>
   <div class="content-div">
     <p v-html="item.title"></p><hr>
-    <div style="text-align: center;">疎空間指標の上限値 {{ s_jinko }}人</div>
+    <div style="text-align: center;">人口密度（人/km2）の上限値 {{ s_jinko }}人</div>
     <input type="range" min="0" :max="250" :step="10" class="jinko-range" v-model.number="s_jinko" @input="inputJinko" />
 <!--    <vue-slider-->
 <!--        v-model="s_jinko"-->

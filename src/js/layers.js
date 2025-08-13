@@ -9311,8 +9311,8 @@ const souranKawabaSumm = '遺跡総覧WebGIS（川場・利根沼田周辺）<br
 // ここにレイヤーを全部書く。クリックするとストアのlayerListに追加されていく-------------------------
 export const Layers =
   [
-    // Keep 疎空間指標 as Layers[0] (unchanged - most important)
-    { text: '疎空間指標', data: { id: "jinko1km", layer: LayersMvt.mesh1kmObj, opacity: 1, summary: LayersMvt.mesh1kmObjSumm, component: {name: 'jinko', values:[]} } },
+    // Keep 人口密度（人/km2） as Layers[0] (unchanged - most important)
+    { text: '人口密度（人/km2）', data: { id: "jinko1km", layer: LayersMvt.mesh1kmObj, opacity: 1, summary: LayersMvt.mesh1kmObjSumm, component: {name: 'jinko', values:[]} } },
     
     // New category 1: 景観 (Layers[1])
     { text: '景観',
