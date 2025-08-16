@@ -14,9 +14,9 @@ export function permalinkEventSet (response) {
     value: {
       id: 2,
       title: '淡色地図',
-  layer: Layers.Layers[6].children[0].children[1].data.layer,
+      layer: Layers.Layers[5].children[0].children[1].data.layer,
       opacity: 1,
-  summary: Layers.Layers[6].children[0].children[1].data.summary,
+      summary: Layers.Layers[5].children[0].children[1].data.summary,
       component: ''
     },
     mapName: 'map01'
@@ -36,9 +36,9 @@ export function permalinkEventSet (response) {
     value: {
       id: 2,
       title: '淡色地図',
-  layer: Layers.Layers[6].children[0].children[1].data.layer,
+      layer: Layers.Layers[5].children[0].children[1].data.layer,
       opacity: 1,
-  summary: Layers.Layers[6].children[0].children[1].data.summary,
+      summary: Layers.Layers[5].children[0].children[1].data.summary,
       component: ''
     },
     mapName: 'map02'
@@ -58,9 +58,9 @@ export function permalinkEventSet (response) {
     value: {
       id: 2,
       title: '淡色地図',
-  layer: Layers.Layers[6].children[0].children[1].data.layer,
+      layer: Layers.Layers[5].children[0].children[1].data.layer,
       opacity: 1,
-  summary: Layers.Layers[6].children[0].children[1].data.summary,
+      summary: Layers.Layers[5].children[0].children[1].data.summary,
       component: ''
     },
     mapName: 'map03'
@@ -80,9 +80,9 @@ export function permalinkEventSet (response) {
     value: {
       id: 2,
       title: '淡色地図',
-  layer: Layers.Layers[6].children[0].children[1].data.layer,
+      layer: Layers.Layers[5].children[0].children[1].data.layer,
       opacity: 1,
-  summary: Layers.Layers[6].children[0].children[1].data.summary,
+      summary: Layers.Layers[5].children[0].children[1].data.summary,
       component: ''
     },
     mapName: 'map04'
@@ -102,9 +102,9 @@ export function permalinkEventSet (response) {
     value: {
       id: "kyuusekki",
       title: '全国旧石器時代遺跡',
-  layer: Layers.Layers[5].children[0].children[2].data.layer,
+      layer: Layers.Layers[4].children[0].children[2].data.layer,
       opacity: 1,
-  summary: Layers.Layers[5].children[0].children[2].data.summary,
+      summary: Layers.Layers[4].children[0].children[2].data.summary,
       component: ''
     },
     mapName: 'map01'
@@ -113,9 +113,9 @@ export function permalinkEventSet (response) {
     value: {
       id: "densyou",
       title: '自然災害伝承碑（全て）',
-  layer: Layers.Layers[4].children[2].children[6].children[0].data.layer,
+      layer: Layers.Layers[3].children[2].children[6].children[0].data.layer,
       opacity: 1,
-  summary: Layers.Layers[4].children[2].children[6].children[0].data.summary,
+      summary: Layers.Layers[3].children[2].children[6].children[0].data.summary,
       component: ''
     },
     mapName: 'map01'
@@ -124,9 +124,9 @@ export function permalinkEventSet (response) {
     value: {
       id: "souran_kawaba_points",
       title: '遺跡総覧WebGIS（川場・利根沼田周辺・点）',
-      layer: Layers.Layers[5].children[0].children[9].data.layer,
+      layer: Layers.Layers[4].children[0].children[9].data.layer,
       opacity: 1,
-      summary: Layers.Layers[5].children[0].children[9].data.summary,
+      summary: Layers.Layers[4].children[0].children[9].data.summary,
       component: ''
     },
     mapName: 'map01'
@@ -135,9 +135,9 @@ export function permalinkEventSet (response) {
     value: {
       id: "souran_kawaba_polygons",
       title: '遺跡総覧WebGIS（川場・利根沼田周辺・面）',
-      layer: Layers.Layers[5].children[0].children[10].data.layer,
+      layer: Layers.Layers[4].children[0].children[10].data.layer,
       opacity: 1,
-      summary: Layers.Layers[5].children[0].children[10].data.summary,
+      summary: Layers.Layers[4].children[0].children[10].data.summary,
       component: ''
     },
     mapName: 'map01'
@@ -146,9 +146,11 @@ export function permalinkEventSet (response) {
     // const hash = decodeURIComponent(window.location.hash.replace('#', ''));
     // console.log(response)
     let hash
-    hash = decodeURIComponent(response.data.replace('#', ''));
-  hash = decodeURIComponent(window.location.hash.replace('#', ''));
-
+    if (response.data) {
+      hash = decodeURIComponent(response.data.replace('#', ''));
+    } else {
+      hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    }
 
   // if (response !== '') {
   //   console.log(response)
