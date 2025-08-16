@@ -9313,8 +9313,10 @@ export const Layers =
   [
     // Keep 人口密度（人/km2） as Layers[0] (unchanged - most important)
     { text: '人口密度（人/km2）', data: { id: "jinko1km", layer: LayersMvt.mesh1kmObj, opacity: 1, summary: LayersMvt.mesh1kmObjSumm, component: {name: 'jinko', values:[]} } },
+  // New top-level vegetation layer (Layers[1]) moved up from 生態・植生 subcategory
+  { text: '植生図2024 関東 (自然度4-10)', data: { id: 'vegetation2024kanto', layer: LayersMvt.vegetation2024KantoObj, opacity: 1, minZoom: 10, summary: LayersMvt.vegetation2024KantoSumm } },
     
-    // New category 1: 景観 (Layers[1])
+  // New category 1: 景観 (Layers[2])
     { text: '景観',
       children: [
         { text: '航空写真',
@@ -9350,7 +9352,7 @@ export const Layers =
           ]},
       ]},
     
-    // New category 2: 自然環境 (Layers[2])  
+  // New category 2: 自然環境 (Layers[3])  
     { text: '自然環境',
       children: [
         { text: '地形図',
@@ -9450,7 +9452,7 @@ export const Layers =
           ]},
       ]},
 
-    // New category 3: 歴史と産業 (Layers[3])
+  // New category 3: 歴史と産業 (Layers[4])
     { text: '歴史と産業',
       children: [
         { text: '古地図',
@@ -9567,7 +9569,7 @@ export const Layers =
           ]},
       ]},
 
-    // New category 4: 伝統と文化 (Layers[4])
+  // New category 4: 伝統と文化 (Layers[5])
     { text: '伝統と文化',
       children: [
         { text: '文化財',
@@ -9594,7 +9596,7 @@ export const Layers =
           ]},
       ]},
 
-    // New category 5: 基盤的・背景地図 (Layers[5])
+  // New category 5: 基盤的・背景地図 (Layers[6])
     { text: '基盤的・背景地図',
       children: [
         { text: '基本地図',
