@@ -48,6 +48,54 @@ String.prototype.trunc =
 const mapsStr = ['map01','map02']
 
 
+// 植生図2024 関東ブロック（ローカルMVT）--------------------------------------------------
+// public/data/tile/veg2024_kanto/{z}/{x}/{y}.mvt に配置済み。
+// 属性: 「植生自然度」(文字列 '0'〜'10') / 「植生区分」。0〜3 は非表示、
+// 10,9 濃緑 / 8,7 中緑 / 6,5,4 薄緑。
+function vegetation2024KantoStyleFunction () {
+  const cache = {};
+  const colorMap = {
+    dark: 'rgba(0,100,0,0.80)',     // 10,9
+    mid:  'rgba(50,150,50,0.70)',   // 8,7
+    light:'rgba(120,200,120,0.60)'  // 6,5,4
+  };
+  return function (feature) {
+    const vRaw = feature.get('植生自然度');
+    const v = Number(vRaw);
+    if (!(v >= 4 && v <= 10)) return null; // 0〜3, それ以外は描画しない
+    let key;
+    if (v === 10 || v === 9) key = 'dark';
+    else if (v === 8 || v === 7) key = 'mid';
+    else key = 'light'; // 6,5,4
+    if (cache[key]) return cache[key];
+    cache[key] = new Style({
+      fill: new Fill({ color: colorMap[key] }),
+      stroke: new Stroke({ color: 'rgba(255,255,255,0.35)', width: 0.3 })
+    });
+    return cache[key];
+  };
+}
+function Vegetation2024Kanto () {
+  this.name = 'vegetation2024kanto';
+  this.source = new VectorTileSource({
+    format: new MVT(),
+    maxZoom: 14, // タイル原データ最大
+    url: './data/tile/veg2024_kanto/{z}/{x}/{y}.mvt'
+  });
+  // zoom10 以上で表示 (zoom10 の解像度 ≒ 152.874) より小さいズームでは非表示
+  this.maxResolution = 152.9;
+  this.style = vegetation2024KantoStyleFunction();
+  this.declutter = true;
+  this.overflow = true;
+}
+export const vegetation2024KantoObj = {};
+for (let i of mapsStr) {
+  vegetation2024KantoObj[i] = new VectorTileLayer(new Vegetation2024Kanto());
+  vegetation2024KantoObj[i].values_['pointer'] = true;
+}
+export const vegetation2024KantoSumm = '<a href="https://www.env.go.jp/" target="_blank">環境省</a> 植生図2024 関東ブロック<br><div style="width:300px"><small>自然度4〜10 を表示 (10,9:濃緑 / 8,7:中緑 / 6〜4:薄緑)。0〜3は非表示。クリックで「植生自然度」「植生区分」を表示。</small></div>';
+
+
 
 
 // const fsource = new VectorSource({

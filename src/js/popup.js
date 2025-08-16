@@ -73,6 +73,15 @@ export function popUp(map,layers,features,overlay,evt,content,content2) {
           ' <a href="https://www.google.co.jp/maps?q=' + lat + ',' + lon + '&hl=ja" target="_blank">GoogleMap</a>' +
           '</div>'
       switch (layers[i].get('name')) {
+        case 'vegetation2024kanto': {
+          if (cont.indexOf('vegetation2024kanto') === -1) {
+            cont += '<div class="vegetation2024kanto" style=width:240px>' +
+                '<h4>植生自然度=' + ru(prop['植生自然度']) + '</h4>' +
+                '植生区分=' + ru(prop['植生区分']) + '<br>' +
+                '</div><hr>';
+          }
+          break;
+        }
           // 小学校区
         case 'syougakkoukuH28':
         case 'syougakkoukuH22':

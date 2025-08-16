@@ -9398,6 +9398,7 @@ export const Layers =
         { text: '生態・植生',
           children: [
             { text: 'エコリス植生図', data: { id: 'ecoris', layer: ecorisObj, opacity: 1, summary: ecorisSumm } },
+            { text: '植生図2024 関東 (自然度4-10)', data: { id: 'vegetation2024kanto', layer: LayersMvt.vegetation2024KantoObj, opacity: 1, minZoom: 10, summary: LayersMvt.vegetation2024KantoSumm } },
             { text: '栃木県レーザ林相図', data: { id: 'tochigirinsou', layer: tochigiRinsouObj, opacity: 1, zoom:10, center:[139.7261306915493, 36.67065922020146], summary: tochigiRinsouSumm } },
             { text: '兵庫県レーザ林相図', data: { id: 'hyougorinsou', layer: hyougoRinsouObj, opacity: 1, zoom:9, center:[134.8428381533734, 35.05148520051671], summary: hyougoRinsouSumm } },
             { text: '高知県レーザ林相図', data: { id: 'kochirinsou', layer: kochiRinsouObj, opacity: 1, zoom:9, center:[133.00989747047424, 33.4075764357881], summary: kochiRinsouSumm } },
